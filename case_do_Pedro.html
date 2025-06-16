@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Desenvolvimento - Liderança Pedro Silva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 45vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .tab-button.active {
+            border-color: #2563eb; /* blue-600 */
+            color: #2563eb; /* blue-600 */
+            font-weight: 600;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <h1 class="text-xl md:text-2xl font-bold text-slate-800">Plano de Desenvolvimento: Liderança Pedro Silva</h1>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#diagnostico" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Diagnóstico</a>
+                    <a href="#plano-acao" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Plano de Ação</a>
+                    <a href="#estrategias" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Estratégias</a>
+                    <a href="#metricas" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Métricas</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <section id="diagnostico" class="mb-16 scroll-mt-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800">Diagnóstico e Pontos Críticos</h2>
+                <p class="mt-2 text-lg text-slate-600 max-w-3xl mx-auto">Análise dos desafios de liderança enfrentados por Pedro e o cenário da nova equipe. Esta seção destaca as áreas que exigem atenção imediata para garantir uma transição bem-sucedida.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4">Desafios da Liderança (Pedro)</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><span class="text-xl mr-3">📉</span><span><strong>Microgerenciamento:</strong> Tendência a intervir tecnicamente, motivado pelo perfeccionismo.</span></li>
+                        <li class="flex items-start"><span class="text-xl mr-3">🗣️</span><span><strong>Comunicação:</strong> Histórico de repasse direto de pressão e posicionamentos agressivos.</span></li>
+                        <li class="flex items-start"><span class="text-xl mr-3">❤️‍🩹</span><span><strong>Esgotamento (Burnout):</strong> Saúde física e mental severamente afetada pelo estresse.</span></li>
+                        <li class="flex items-start"><span class="text-xl mr-3">🎓</span><span><strong>Oportunidade de Crescimento:</strong> A falta de domínio técnico na nova área é um catalisador para desenvolver uma liderança focada em pessoas.</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4 text-center">Panorama da Saúde de Pedro</h3>
+                    <div class="chart-container">
+                        <canvas id="healthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+             <div class="mt-8 bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Desafios da Nova Equipe</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="flex items-start p-3 bg-slate-50 rounded-md"><span class="text-xl mr-3">🔄</span><span><strong>Equipe Híbrida:</strong> Combinação de membros antigos e novos, exigindo esforço de integração.</span></div>
+                    <div class="flex items-start p-3 bg-slate-50 rounded-md"><span class="text-xl mr-3">🎯</span><span><strong>O Concorrente:</strong> Membro com forte ambição pela posição de liderança.</span></div>
+                    <div class="flex items-start p-3 bg-slate-50 rounded-md"><span class="text-xl mr-3">😟</span><span><strong>O Sênior Inseguro:</strong> Tecnicamente capaz, mas dependente de direcionamento constante.</span></div>
+                    <div class="flex items-start p-3 bg-slate-50 rounded-md"><span class="text-xl mr-3">💪</span><span><strong>Os Seniores Autônomos:</strong> Dois engenheiros com maturidade técnica e comportamental, potenciais pilares da equipe.</span></div>
+                    <div class="flex items-start p-3 bg-slate-50 rounded-md"><span class="text-xl mr-3">💻</span><span><strong>O Colaborador Remoto:</strong> Engenheiro em home office com barreiras tecnológicas.</span></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="plano-acao" class="mb-16 scroll-mt-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800">Plano de Ação - 100 Dias</h2>
+                 <p class="mt-2 text-lg text-slate-600 max-w-3xl mx-auto">Um roteiro prático dividido em três fases para guiar a transição. Clique em cada fase para ver as ações detalhadas para Pedro, a equipe e o suporte da gestão.</p>
+            </div>
+            <div class="border-b border-slate-300 mb-6 flex justify-center space-x-2 md:space-x-4" id="tabs-container">
+                <button data-tab="fase1" class="tab-button active py-2 px-4 border-b-2 transition-colors duration-300">Fase 1 (Dias 1-30)</button>
+                <button data-tab="fase2" class="tab-button py-2 px-4 border-b-2 border-transparent transition-colors duration-300">Fase 2 (Dias 31-70)</button>
+                <button data-tab="fase3" class="tab-button py-2 px-4 border-b-2 border-transparent transition-colors duration-300">Fase 3 (Dias 71-100+)</button>
+            </div>
+            
+            <div id="tab-content">
+                <div id="fase1" class="tab-pane">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-semibold text-slate-800">Fase 1: Diagnóstico e Alinhamento</h3>
+                        <p class="text-slate-600 italic">Meta: Ouvir, aprender e construir as bases da confiança.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-blue-200">
+                            <h4 class="font-bold text-lg mb-2 text-blue-800">Ações (Pedro)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Iniciar mentoria/coaching focado em liderança.</li>
+                                <li>Realizar reuniões 1-a-1 para ouvir expectativas.</li>
+                                <li>Mapear processos da nova área com a equipe.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-green-200">
+                            <h4 class="font-bold text-lg mb-2 text-green-800">Ações (Equipe)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Participar da reunião de Kick-off.</li>
+                                <li>Construir em conjunto um "Contrato de Convivência".</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-purple-200">
+                            <h4 class="font-bold text-lg mb-2 text-purple-800">Suporte (Gestão)</h4>
+                             <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Alinhar metas e expectativas com Pedro.</li>
+                                <li>Comunicar a mudança de forma clara à equipe.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fase2" class="tab-pane hidden">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-semibold text-slate-800">Fase 2: Estruturação e Desenvolvimento</h3>
+                        <p class="text-slate-600 italic">Meta: Definir papéis, delegar e desenvolver competências.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-blue-200">
+                            <h4 class="font-bold text-lg mb-2 text-blue-800">Ações (Pedro)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Delegar projetos e responsabilidades estratégicas.</li>
+                                <li>Estabelecer rituais de gestão (reuniões, etc.).</li>
+                                <li>Mediar conflitos de forma construtiva.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-green-200">
+                            <h4 class="font-bold text-lg mb-2 text-green-800">Ações (Equipe)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Criar matriz de responsabilidades (RACI).</li>
+                                <li>Construir Planos de Desenvolvimento Individual (PDI).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-purple-200">
+                            <h4 class="font-bold text-lg mb-2 text-purple-800">Suporte (Gestão)</h4>
+                             <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Realizar check-ins quinzenais com Pedro.</li>
+                                <li>Disponibilizar recursos para treinamentos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fase3" class="tab-pane hidden">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-semibold text-slate-800">Fase 3: Consolidação e Alta Performance</h3>
+                        <p class="text-slate-600 italic">Meta: Consolidar a cultura de autonomia e melhoria contínua.</p>
+                    </div>
+                     <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-blue-200">
+                            <h4 class="font-bold text-lg mb-2 text-blue-800">Ações (Pedro)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Implementar cultura de feedback 360°.</li>
+                                <li>Focar em métricas de desempenho transparentes.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-green-200">
+                            <h4 class="font-bold text-lg mb-2 text-green-800">Ações (Equipe)</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Assumir a apresentação de resultados da área.</li>
+                                <li>Operar com autonomia e responsabilidade.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-purple-200">
+                            <h4 class="font-bold text-lg mb-2 text-purple-800">Suporte (Gestão)</h4>
+                             <ul class="list-disc list-inside space-y-2 text-slate-700">
+                                <li>Reconhecer publicamente os sucessos da equipe.</li>
+                                <li>Iniciar o planejamento de sucessão na área.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="estrategias" class="mb-16 scroll-mt-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800">Abordagem Estratégica por Perfil</h2>
+                 <p class="mt-2 text-lg text-slate-600 max-w-3xl mx-auto">Cada membro da equipe é único. Esta seção detalha as estratégias de gestão personalizadas para lidar com os diferentes perfis e maximizar o potencial de cada um. Clique em um perfil para ver a abordagem.</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4" id="accordion-container">
+                <div class="accordion-item bg-white rounded-lg shadow-md border border-slate-200">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-4">
+                        <span class="font-semibold text-lg text-slate-800 flex items-center"><span class="text-2xl mr-3">🎯</span> O Concorrente</span>
+                        <span class="accordion-icon transition-transform duration-300 transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 pt-0 text-slate-600">Delegar a liderança de um projeto estratégico para canalizar sua ambição de forma produtiva, reconhecendo seu potencial e transformando-o em um forte aliado.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white rounded-lg shadow-md border border-slate-200">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-4">
+                        <span class="font-semibold text-lg text-slate-800 flex items-center"><span class="text-2xl mr-3">😟</span> O Sênior Inseguro</span>
+                        <span class="accordion-icon transition-transform duration-300 transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 pt-0 text-slate-600">Atribuir tarefas com escopo bem definido, promover mentoria com um colega autônomo e oferecer feedback positivo frequente para construir sua autoconfiança e autonomia.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white rounded-lg shadow-md border border-slate-200">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-4">
+                        <span class="font-semibold text-lg text-slate-800 flex items-center"><span class="text-2xl mr-3">💪</span> Os Seniores Autônomos</span>
+                        <span class="accordion-icon transition-transform duration-300 transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 pt-0 text-slate-600">Posicioná-los como pilares técnicos e referências, delegando responsabilidades críticas e envolvendo-os nas decisões estratégicas para utilizá-los como multiplicadores da nova cultura.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white rounded-lg shadow-md border border-slate-200">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-4">
+                        <span class="font-semibold text-lg text-slate-800 flex items-center"><span class="text-2xl mr-3">💻</span> O Colaborador Remoto</span>
+                        <span class="accordion-icon transition-transform duration-300 transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="p-4 pt-0 text-slate-600">Prover treinamento e ferramentas adequadas, garantir uma comunicação inclusiva e proativa, e atribuir um "colega parceiro" para suporte e integração total à equipe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metricas" class="scroll-mt-20">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800">Métricas de Sucesso</h2>
+                <p class="mt-2 text-lg text-slate-600 max-w-3xl mx-auto">Como mediremos o sucesso? Esta seção visualiza os indicadores-chave de desempenho (KPIs) que serão usados para avaliar a eficácia do plano e a evolução da equipe e do líder.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                <div class="chart-container" style="max-width: 800px; height: 400px;">
+                    <canvas id="metricsChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm">
+            <p>Feito por: <br>- Gabriela Machado <br>- Gabrieli Oliveira <br>- Giovana Cardoso <br>- Neife Junior <br>- Raika Souza</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const healthCtx = document.getElementById('healthChart').getContext('2d');
+            new Chart(healthCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Ansiedade Elevada', 'Sono Prejudicado', 'Aumento de Peso', 'Pressão Alta', 'Carga de Trabalho'],
+                    datasets: [{
+                        label: 'Nível de Alerta',
+                        data: [8, 7, 6, 8, 9], // Valores de 0 a 10
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)', // red-500
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        pointBackgroundColor: 'rgba(239, 68, 68, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(239, 68, 68, 1)'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            pointLabels: { 
+                                font: { size: 12 },
+                                color: '#475569' // slate-600
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                color: '#64748b', // slate-500
+                                stepSize: 2,
+                                beginAtZero: true,
+                                max: 10
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.raw}/10`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const metricsCtx = document.getElementById('metricsChart').getContext('2d');
+            new Chart(metricsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Clima e Engajamento', 'Desempenho da Área', 'Retenção de Talentos', 'Feedback 360° (Pedro)', 'Bem-Estar (Pedro)'],
+                    datasets: [{
+                        label: 'Pontuação Inicial (Estimada)',
+                        data: [30, 50, 60, 25, 20],
+                        backgroundColor: 'rgba(100, 116, 139, 0.5)', // slate-500
+                        borderColor: 'rgba(100, 116, 139, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Meta de Sucesso',
+                        data: [85, 90, 95, 80, 80],
+                        backgroundColor: 'rgba(37, 99, 235, 0.6)', // blue-600
+                        borderColor: 'rgba(37, 99, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { color: '#475569' } // slate-600
+                        },
+                        x: {
+                            ticks: { color: '#475569' } // slate-600
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { color: '#334155' } // slate-700
+                        },
+                         tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const tabsContainer = document.getElementById('tabs-container');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            tabsContainer.addEventListener('click', (event) => {
+                if (event.target.matches('.tab-button')) {
+                    document.querySelector('.tab-button.active').classList.remove('active');
+                    event.target.classList.add('active');
+
+                    tabPanes.forEach(pane => pane.classList.add('hidden'));
+                    document.getElementById(event.target.dataset.tab).classList.remove('hidden');
+                }
+            });
+            
+            const accordionContainer = document.getElementById('accordion-container');
+            accordionContainer.addEventListener('click', (event) => {
+                const header = event.target.closest('.accordion-header');
+                if (!header) return;
+
+                const item = header.parentElement;
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.accordion-icon');
+                
+                const isExpanded = item.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    item.classList.remove('expanded');
+                    content.style.maxHeight = '0px';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    item.classList.add('expanded');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
